@@ -10,6 +10,19 @@
     html,
     body {
       margin: 0;
+      overflow: hidden;
+      background-color: black;
+      position: relative;
+    }
+
+    body::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      cursor: none;
     }
 
     iframe {
@@ -30,7 +43,7 @@
       'https://www.youtube-nocookie.com/embed/i8WmqbhkMy8',
     ]
 
-    const stream = streams[Math.round(Math.random() * streams.length)];
+    const stream = streams[Math.floor(Math.random() * streams.length)];
 
     const iframe = document.createElement('iframe')
     iframe.title = 'Youtube video player'
