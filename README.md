@@ -1,2 +1,3 @@
-# wildlife-webcam-viewer
+# Wildlife webcam viewer
+
 Watch wildlife streams

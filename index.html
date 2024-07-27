@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Wildelife webcam streams</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    html,
+    body {
+      margin: 0;
+    }
+
+    iframe {
+      width: 100vw;
+      height: 100vh;
+      border: none;
+    }
+  </style>
+</head>
+
+<body>
+  <script>
+    const streams = [
+      'https://www.youtube-nocookie.com/embed/DHUnz4dyb54',
+      'https://www.youtube-nocookie.com/embed/eAfhMDJ1t7E',
+      'https://www.youtube-nocookie.com/embed/Ihr_nwydXi0',
+      'https://www.youtube-nocookie.com/embed/ZFuWYnuu9I8',
+      'https://www.youtube-nocookie.com/embed/i8WmqbhkMy8',
+    ]
+
+    const stream = streams[Math.round(Math.random() * streams.length)];
+
+    const iframe = document.createElement('iframe')
+    iframe.title = 'Youtube video player'
+    iframe.allow = 'autoplay; encrypted-media; picture-in-picture; web-share'
+    iframe.referrerpolicy = 'strict-origin-when-cross-origin'
+    iframe.allowfullscreen = true
+    iframe.src = `${stream}?autoplay=1&mute=1`
+
+    document.body.appendChild(iframe)
+
+    setTimeout(() => {window.location.reload()}, 1000 * 60 * 20) 
+  </script>
+</body>
+
+</html>
