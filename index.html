@@ -52,7 +52,10 @@
     iframe.allowfullscreen = true
     iframe.src = `${stream}?autoplay=1&mute=1`
 
-    document.body.appendChild(iframe)
+    const now = new Date(Date.now())
+    if (now.getHours() <= 22 && now.getHours() >= 8) {
+      document.body.appendChild(iframe)
+    }
 
     setTimeout(() => {window.location.reload()}, 1000 * 60 * 20) 
   </script>
